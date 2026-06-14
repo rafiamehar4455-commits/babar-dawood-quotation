@@ -16,7 +16,7 @@
 
   .container { display: grid; grid-template-columns: 410px 1fr; gap: 0; height: calc(100vh - 68px); }
 
-  /* Sidebar Form Panel */
+  /* Interactive Sidebar Form Panel */
   .form-panel { background: #ffffff; padding: 22px; overflow-y: auto; border-right: 1px solid #cfd8dc; }
   .form-panel h2 { color: #0d3b66; font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #0d3b66; font-weight: 700; }
   .form-group { margin-bottom: 14px; }
@@ -26,7 +26,7 @@
 
   .items-section { margin-top: 10px; }
   
-  /* Form line-item card */
+  /* Modern form line-item card */
   .item-row { background: #f8f9fa; border: 1px solid #cfd8dc; border-radius: 8px; padding: 16px; margin-bottom: 15px; position: relative; box-shadow: 0 3px 10px rgba(0,0,0,0.04); }
   .item-row h4 { color: #0d3b66; font-size: 12px; margin-bottom: 10px; font-weight: 700; }
   .item-row label { display: block; font-size: 10px; color: #546e7a; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
@@ -60,17 +60,17 @@
   .btn-whatsapp { background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 5px; }
   .btn-print { background: #37474f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; }
 
-  /* Document layout formatted to exact A4 sizes */
+  /* Document layout elements formatted to direct A4 specifications */
   .quotation-page { background: white; width: 210mm; min-height: 297mm; height: auto; padding: 20mm; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; color: #222222; position: relative; margin-bottom: 25px; box-sizing: border-box; }
   .quotation-page-footer { background: white; width: 210mm; min-height: 297mm; height: auto; padding: 20mm; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; color: #222222; position: relative; margin-bottom: 25px; box-sizing: border-box; page-break-inside: avoid !important; break-inside: avoid !important; }
 
-  /* Clean, light-grey borders matched to target mockup */
+  /* Clean, light-grey borders matched to mockup layout */
   table { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 15px; position: relative; z-index: 1; table-layout: fixed; }
   table th { background: #0d3b66; color: white; padding: 10px 8px; text-align: left; font-weight: bold; border: 1px solid #0d3b66; font-size: 11.5px; }
   table th:last-child { text-align: right; }
   table td { padding: 8px 10px; border: 1px solid #cfd8dc; vertical-align: top; word-wrap: break-word; }
   table tr { page-break-inside: avoid !important; break-inside: avoid !important; }
-  table tr:nth-child(even) td { background: #fcfdfe; }
+  table tr:nth-child(even) td { background: #fdfefe; }
   .total-row td { font-weight: bold; background: #f0f4f8 !important; border-top: 2px solid #0d3b66; }
   .total-row td:last-child { color: #0d3b66; font-size: 13px; text-align: right; }
 
@@ -205,7 +205,7 @@
 </div>
 
 <script>
-const DB_URL = "https://script.google.com/macros/s/AKfycbAcNJK_x95In2b2yU35q6lC_jbmDkhS564B2HR9QqJDVImwJCa3LXXaHWdSX3gFPU9/exec";
+const DB_URL = "https://script.google.com/macros/s/AKfycby-YxOm-P6uYJge3N0BnRr92JVPJSO_tQ9x_A1lKnWECaP4FgywXL7AohHPqx2yI_D-/exec";
 const SPREADSHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1AY99c3ElbhsWD4VTlLPpcBwkETP19kTJ8nBtrwCkOO4/export?format=csv";
 
 let currentYear = new Date().getFullYear();
@@ -841,7 +841,7 @@ function generateQuotation() {
 
   if (items.length === 0) { 
     document.getElementById('quotationDoc').innerHTML = `
-      <div style="text-align:center; color:#999; padding:80px 0;">Fill the form & click Generate Quotation</div>`;
+      <div style="text-align:center; color:#999; padding:80px 0;">Fill form & Generate</div>`;
     return; 
   }
 
