@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eceff1; color: #2c3e50; min-height: 100vh; }
+  body { font-family: Arial, sans-serif; background: #eceff1; color: #2c3e50; min-height: 100vh; }
 
   .app-header { background: #0d3b66; color: #ffffff; padding: 18px 30px; display:flex; align-items:center; justify-content: space-between; border-bottom: 4px solid #f4d35e; }
   .app-header h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
@@ -16,7 +16,7 @@
 
   .container { display: grid; grid-template-columns: 410px 1fr; gap: 0; height: calc(100vh - 68px); }
 
-  /* Interactive Sidebar Form Panel */
+  /* Sidebar Form Panel */
   .form-panel { background: #ffffff; padding: 22px; overflow-y: auto; border-right: 1px solid #cfd8dc; }
   .form-panel h2 { color: #0d3b66; font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #0d3b66; font-weight: 700; }
   .form-group { margin-bottom: 14px; }
@@ -26,7 +26,7 @@
 
   .items-section { margin-top: 10px; }
   
-  /* Modern form line-item card */
+  /* Form line-item card */
   .item-row { background: #f8f9fa; border: 1px solid #cfd8dc; border-radius: 8px; padding: 16px; margin-bottom: 15px; position: relative; box-shadow: 0 3px 10px rgba(0,0,0,0.04); }
   .item-row h4 { color: #0d3b66; font-size: 12px; margin-bottom: 10px; font-weight: 700; }
   .item-row label { display: block; font-size: 10px; color: #546e7a; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
@@ -60,17 +60,17 @@
   .btn-whatsapp { background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 5px; }
   .btn-print { background: #37474f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; }
 
-  /* Structured print container targeting direct standard A4 measurements */
+  /* Document layout formatted to exact A4 sizes */
   .quotation-page { background: white; width: 210mm; min-height: 297mm; height: auto; padding: 20mm; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; color: #222222; position: relative; margin-bottom: 25px; box-sizing: border-box; }
   .quotation-page-footer { background: white; width: 210mm; min-height: 297mm; height: auto; padding: 20mm; box-shadow: 0 4px 20px rgba(0,0,0,0.15); font-family: Arial, sans-serif; color: #222222; position: relative; margin-bottom: 25px; box-sizing: border-box; page-break-inside: avoid !important; break-inside: avoid !important; }
 
-  /* Document layout elements */
+  /* Clean, light-grey borders matched to target mockup */
   table { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 15px; position: relative; z-index: 1; table-layout: fixed; }
-  table th { background: #0d3b66; color: white; padding: 10px 8px; text-align: left; font-weight: bold; border: 1px solid #0d3b66; }
+  table th { background: #0d3b66; color: white; padding: 10px 8px; text-align: left; font-weight: bold; border: 1px solid #0d3b66; font-size: 11.5px; }
   table th:last-child { text-align: right; }
   table td { padding: 8px 10px; border: 1px solid #cfd8dc; vertical-align: top; word-wrap: break-word; }
   table tr { page-break-inside: avoid !important; break-inside: avoid !important; }
-  table tr:nth-child(even) td { background: #fdfefe; }
+  table tr:nth-child(even) td { background: #fcfdfe; }
   .total-row td { font-weight: bold; background: #f0f4f8 !important; border-top: 2px solid #0d3b66; }
   .total-row td:last-child { color: #0d3b66; font-size: 13px; text-align: right; }
 
@@ -81,15 +81,14 @@
   .doc-section-title { color: #0d3b66; font-weight: bold; font-size: 12px; margin: 15px 0 6px; position: relative; z-index: 1; text-transform: uppercase; border-bottom: 1px solid #0d3b66; padding-bottom: 3px; }
   .doc-list { list-style: none; font-size: 11px; line-height: 1.8; position: relative; z-index: 1; }
   .doc-list li::before { content: '✓ '; color: #0d3b66; font-weight: bold; }
-  .client-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; font-size: 12px; position: relative; z-index: 1; }
-  .section-label { font-size: 10px; text-transform: uppercase; color: #78909c; font-weight: bold; border-bottom: 1px solid #cfd8dc; padding-bottom: 3px; margin-bottom: 5px; }
+  .client-meta-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; margin-bottom: 15px; font-size: 12px; position: relative; z-index: 1; }
+  .section-label { font-size: 10px; text-transform: uppercase; color: #78909c; font-weight: bold; border-bottom: 1px solid #cfd8dc; padding-bottom: 3px; margin-bottom: 6px; }
   
   .bank-grid-vertical { display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1; margin-top: 8px; }
   .bank-card { background: #f8f9fa; border: 1px solid #cfd8dc; padding: 10px 14px; font-size: 11px; line-height: 1.6; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
   .bank-card strong { color: #0d3b66; font-size: 11.5px; display: block; margin-bottom: 1px; }
   .bank-iban { font-size: 11px; font-weight: bold; color: #222222; letter-spacing: 0.3px; font-family: monospace; }
 
-  /* Premium Watermark implementation */
   .watermark-container { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 0; overflow: hidden; }
   .watermark-text { font-family: Arial, sans-serif; font-size: 65px; font-weight: 900; color: rgba(13, 59, 102, 0.03); text-transform: uppercase; transform: rotate(-35deg); white-space: nowrap; letter-spacing: 5px; }
 
@@ -164,9 +163,9 @@
     
     <div class="form-group"><label>Date</label><input type="date" id="quotDate"></div>
     <div class="form-group"><label>Client Name / Attention</label><input type="text" id="clientAddr" placeholder="Mr. / Miss,"></div>
-    <div class="form-group"><label>Client Phone</label><input type="text" id="clientPhone" placeholder="+971 52 479 0625"></div>
+    <div class="form-group"><label>Client Phone</label><input type="text" id="clientPhone" placeholder="NA"></div>
     <div class="form-group"><label>Project / Location</label><input type="text" id="clientEmail" placeholder="Sharjah, UAE"></div>
-    <div class="form-group"><label>Subject</label><input type="text" id="subject" placeholder="Supply & Installation of Aluminum door & window."></div>
+    <div class="form-group"><label>Subject</label><input type="text" id="subject" placeholder="Supply & Installation of Glass Room"></div>
 
     <div class="form-group">
       <label>Tax Settings</label>
@@ -837,7 +836,7 @@ function generateQuotation() {
   const clientAddr = document.getElementById('clientAddr').value || 'Mr. / Miss,';
   const clientPhone = document.getElementById('clientPhone').value || 'NA';
   const clientEmail = document.getElementById('clientEmail').value || 'Sharjah, UAE';
-  const subject = document.getElementById('subject').value || 'Supply & Installation of Aluminum door & window.';
+  const subject = document.getElementById('subject').value || 'Supply & Installation of Glass Room';
   const items = getItems();
 
   if (items.length === 0) { 
@@ -895,17 +894,18 @@ function generateQuotation() {
     </div>`;
 
   const headerHTML = `
-    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:3px solid #0d3b66;margin-bottom:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;margin-bottom:12px;">
       <div style="display:flex;align-items:center;gap:12px;">
-        <img src="Babar_Dawood_Logo.png" alt="Babar Dawood Logo" style="height:65px; max-width:280px; object-fit:contain; border-radius:4px;" onerror="this.outerHTML='<h2 style=&quot;color:#0d3b66;&quot;>BABAR DAWOOD</h2>'">
+        <img src="Babar_Dawood_Logo.png" alt="Babar Dawood Logo" style="height:55px; max-width:280px; object-fit:contain; border-radius:4px;" onerror="this.outerHTML='<h2 style=&quot;color:#0d3b66;&quot;>BABAR DAWOOD</h2>'">
       </div>
-      <div style="text-align:right; font-family: Arial, sans-serif; font-size: 11px; line-height: 1.5; color: #37474f; border-left: 3px solid #f4d35e; padding-left: 12px;">
-        <strong>Phone:</strong> +971524790625<br>
-        <strong>Web:</strong> www.babaraluminum.com<br>
-        <strong>Email:</strong> info@babaraluminum.com<br>
-        <strong>Address:</strong> 17 industrial area,<br> warehouse 08 Sharjah, UAE
+      <div style="text-align:right; font-family: Arial, sans-serif; font-size: 11px; line-height: 1.5; color: #222222; font-weight: bold;">
+        Phone: +971524790625<br>
+        Web: www.babaraluminum.com<br>
+        Email: info@babaraluminum.com<br>
+        Address: 17 industrial area,<br> warehouse 08 Sharjah, UAE
       </div>
-    </div>`;
+    </div>
+    <div style="border-bottom: 3px solid #0d3b66; margin-bottom: 12px; width: 100%;"></div>`;
 
   const page1 = `
   <div class="quotation-page">
@@ -915,18 +915,22 @@ function generateQuotation() {
       <div class="client-meta-grid">
         <div>
           <div class="section-label">Client Details</div>
-          <div><strong>Attn:</strong> ${clientAddr}</div>
-          <div><strong>Phone:</strong> &nbsp;${clientPhone}</div>
-          <div><strong>Project:</strong> &nbsp;&nbsp;${clientEmail}</div>
+          <div style="line-height:1.6;">
+            <strong>Attn:</strong> ${clientAddr}<br>
+            <strong>Phone:</strong> ${clientPhone}<br>
+            <strong>Project:</strong> ${clientEmail}
+          </div>
         </div>
         <div>
           <div class="section-label">Document Info</div>
-          <div style="color: #0d3b66; font-size:13px;"><strong>Ref:</strong> <strong>${ref}</strong></div>
-          <div><strong>Date:</strong> ${date}</div>
-          <div><strong>Type:</strong> Standard Quotation</div>
+          <div style="line-height:1.6;">
+            <strong>Ref:</strong> <span style="color: #0d3b66; font-weight: bold;">${ref}</span><br>
+            <strong>Date:</strong> ${date}<br>
+            <strong>Type:</strong> Standard Quotation
+          </div>
         </div>
       </div>
-      <div style="text-align:center;font-weight:bold;font-size:13px;color:#0d3b66;border-bottom:2px solid #0d3b66;border-top:2px solid #0d3b66;padding:8px 0;margin-bottom:15px;text-transform:uppercase;letter-spacing:0.5px;">
+      <div style="border-top: 2px solid #0d3b66; border-bottom: 2px solid #0d3b66; padding: 8px 0; text-align: center; font-size: 13px; font-weight: bold; color: #0d3b66; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px;">
         Subject: ${subject}
       </div>
       <table>
@@ -994,7 +998,7 @@ function generateQuotation() {
           <div>Mobile: +971524790625</div>
         </div>
         
-        <!-- HIGH-FIDELITY COMBINED SIGNATURE AND OVAL STAMP IMAGE -->
+        <!-- COMBINED SIGNATURE AND STAMP IMAGE -->
         <div style="text-align:center; z-index: 10; position: relative;">
           <img src="Signature.png" alt="Stamp & Signature" style="height:115px; max-width:280px; object-fit:contain;" onerror="this.outerHTML='<div style=&quot;border:1px dashed #78909c;padding:15px;font-size:10px;color:#78909c;&quot;>[ Signature.png not found ]</div>'">
         </div>
